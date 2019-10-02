@@ -3,6 +3,6 @@ class Money
 
   def == (object)
     money = object
-    amount == money.amount
+    amount == money.amount && self.class == money.class
   end
 end

@@ -12,6 +12,8 @@ describe 'Money' do
 
     expect(Franc.new(5) == Franc.new(5)).to be true
     expect(Franc.new(5) == Franc.new(6)).to be false
+
+    expect(Dollar.new(5) == Franc.new(5)).to be false
   end
 
   it 'test franc multiplication' do
