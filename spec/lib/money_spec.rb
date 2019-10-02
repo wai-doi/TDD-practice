@@ -17,4 +17,11 @@ describe 'Money' do
     expect(Money.dollar(1).currency).to eq 'USD'
     expect(Money.franc(1).currency).to eq 'CHF'
   end
+
+  it 'test simplet addition' do
+    five = Money.dollar(5)
+    sum = five.plus(five)
+    bank = Bank.new
+    reduced = bank.reduce(sum, 'USD')
+  end
 end
