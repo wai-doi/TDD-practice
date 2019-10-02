@@ -18,6 +18,10 @@ class Money
 
   def == (object)
     money = object
-    amount == money.amount && self.class == money.class
+    amount == money.amount && self.currency == money.currency
+  end
+
+  def times(multiplier)
+    Money.new(amount * multiplier, currency)
   end
 end

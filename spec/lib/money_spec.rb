@@ -27,4 +27,8 @@ describe 'Money' do
     expect(Money.dollar(1).currency).to eq 'USD'
     expect(Money.franc(1).currency).to eq 'CHF'
   end
+
+  it 'test difference class equality' do
+    expect(Money.new(10, 'CHF') == Franc.new(10, 'CHF')).to eq true
+  end
 end
