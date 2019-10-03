@@ -13,6 +13,9 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'bundler'
+Bundler.require
+
 Dir[File.expand_path('../lib', __dir__) + '/*.rb'].each { |f| require f}
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
