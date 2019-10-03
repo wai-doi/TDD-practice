@@ -26,6 +26,10 @@ class Money
   end
 
   def plus(addend)
-    Money.new(amount + addend.amount, currency)
+    Sum.new(self, addend)
+  end
+
+  def reduce(to)
+    self
   end
 end

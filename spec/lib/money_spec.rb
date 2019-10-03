@@ -24,4 +24,25 @@ describe 'Money' do
     bank = Bank.new
     reduced = bank.reduce(sum, 'USD')
   end
+
+  it 'test plus return sum' do
+    five = Money.dollar(5)
+    result = five.plus(five)
+    sum = result
+    expect(sum.augend).to eq five
+    expect(sum.addend).to eq five
+  end
+
+  it 'test reduce sum' do
+    sum = Sum.new(Money.dollar(3), Money.dollar(4))
+    bank = Bank.new
+    result = bank.reduce(sum, 'USD')
+    expect(result).to eq Money.dollar(7)
+  end
+
+  it 'test reduce money' do
+    bank = Bank.new
+    result = bank.reduce(Money.dollar(1), 'USD')
+    expect(result).to eq Money.dollar(1)
+  end
 end
